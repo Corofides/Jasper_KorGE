@@ -13,10 +13,11 @@ import com.soywiz.korev.Key
 suspend fun main() = Korge(width = 512, height = 512, bgcolor = Colors["#2b2b2b"]) {
 	val sceneContainer = sceneContainer()
 
-	sceneContainer.changeTo({ MyScene() })
+	sceneContainer.changeTo({ MainGame() })
 }
 
 class MyScene : Scene() {
+
 	override suspend fun SContainer.sceneMain() {
 		val minDegrees = (-16).degrees
 		val maxDegrees = (+16).degrees
@@ -29,6 +30,16 @@ class MyScene : Scene() {
             x = 512.0 / 2 - (drawSize / 2);
             y = 512.0 / 2 - (drawSize / 2);
         });
+
+            solidRect(16.0, 16.0, Colors.GREEN) {
+                x = 0.0;
+                y = 0.0;
+
+                addUpdater {
+                    x += 1.0;
+                }
+
+            }
 
         /*for (i in 0..1) {
             snake.plus(solidRect(drawSize, drawSize, Colors.GREEN) {

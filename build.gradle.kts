@@ -15,9 +15,12 @@ korge {
 
 // To selectively enable targets
 
-	targetJvm()
+    dependencyMulti("io.github.quillraven.fleks:Fleks:2.2", registerPlugin = false)
+
+    targetJvm()
 	//targetJs()
 	//targetDesktop()
 	//targetIos()
 	//targetAndroidIndirect() // targetAndroidDirect()
 }
+
